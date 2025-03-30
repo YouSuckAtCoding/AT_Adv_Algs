@@ -1,4 +1,5 @@
 import random
+import time
 
 from MatrixGraph import Graph
 
@@ -16,14 +17,18 @@ if __name__ == "__main__":
     grp.add_edge(3, 5, 6)
     grp.add_edge(4, 5, 5)
 
+
+    start_time = time.time()
     grp.primMst()
+    print("Tempo para grafo pequeno: ", time.time() - start_time)
 
+    grp = Graph(150)
 
-    grp = Graph(26)
-
-    for i in range(26):
-        for j in range(i + 1, 26):
+    for i in range(150):
+        for j in range(i + 1, 150):
             weight = random.randint(1, 100)
             grp.add_edge(i, j, weight)
 
+    start_time = time.time()
     grp.primMst()
+    print("Tempo para grafo grande: ", time.time() - start_time)

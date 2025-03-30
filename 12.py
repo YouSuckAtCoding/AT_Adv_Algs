@@ -1,3 +1,5 @@
+import time
+
 import GeneticTSP
 
 #https://www.geeksforgeeks.org/travelling-salesman-problem-using-dynamic-programming/
@@ -61,12 +63,40 @@ cost = [
     [15, 35, 0, 30],
     [20, 25, 30, 0]
 ]
-res = tsp_dp(cost)
-print(res)
+cost2 = [
+    [0,42,32,54,81,53],
+    [42,0,61,73,60,77],
+    [32,61,0,69,56,85],
+    [54,73,69,0,37,45],
+    [81,60,56,37,0,74],
+    [53,77,85,45,74,0]
+]
+cost3 = [
+    [0,42,32,54,81,53,53,53],
+    [42,0,61,73,60,77,77,77],
+    [32,61,0,69,56,85,85,85],
+    [54,73,69,0,37,45,45,45],
+    [81,60,56,37,0,74,74,74],
+    [53,77,85,45,74,0, 0, 0],
+    [12,58,55,51,64,48,0,54],
+    [84,38,53,85,67,59,54,0]
+]
 
-res, path = tsp_greedy(cost)
-print(res)
-print(path)
+costs = [cost, cost2, cost3]
+for cost in costs:
+    print()
+    start_time = time.time()
+    res = tsp_dp(cost)
+    print(res)
+    print(f"DP for size {len(cost)}: {time.time() - start_time}")
 
-res = GeneticTSP.geneticTSP(cost)
-print(res)
+    start_time = time.time()
+    res, path = tsp_greedy(cost)
+    print(res)
+    print(path)
+    print(f"Greedy for size {len(cost)}: {time.time() - start_time}")
+
+    start_time = time.time()
+    res = GeneticTSP.geneticTSP(cost)
+    print(res)
+    print(f"Genetic for size {len(cost)}: {time.time() - start_time}")

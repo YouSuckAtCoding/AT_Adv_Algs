@@ -1,7 +1,6 @@
 import time
 from MinHeap import MinHeap
 
-
 class Process:
     def __init__(self, id, priority ):
         self.id = id

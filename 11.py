@@ -71,7 +71,7 @@ for board_size in sizes:
     start_time = time.time()
 
     print(f"Brute force with size {board_size}")
-    if not knightBruteForce(board_size, board, 0, 0, moves):
+    if board_size >= 10 or not knightBruteForce(board_size, board, 0, 0, moves):
         print("No solution")
     else:
         print_board(board)
