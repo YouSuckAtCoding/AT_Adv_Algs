@@ -23,8 +23,12 @@ if __name__ == "__main__":
     matrxgrp.add_edge(3, 5, 6, True)
     matrxgrp.add_edge(4, 5, 1, True)
 
-    print(listgrp.list)
-    print(matrxgrp.matrix)
+
+    for x in listgrp.list:
+        print(x, listgrp.list.get(x))
+    for row in matrxgrp.matrix:
+        print(row)
+
 
 
 

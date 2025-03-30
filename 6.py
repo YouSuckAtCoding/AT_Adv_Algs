@@ -16,6 +16,10 @@ if __name__ == "__main__":
     grp.add_edge("D", "F", 5)
     grp.add_edge("E", "F", 3)
 
+    for x in grp.list:
+        print(x, grp.list.get(x))
+
+
     print(grp.djikstra("CD", "F"))
 
     

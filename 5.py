@@ -25,7 +25,6 @@ def bfs(grp):
 
     return prev
 
-
 def dfs_recusrsion(visited, node, result):
 
     visited[node] = True
@@ -62,6 +61,12 @@ if __name__ == "__main__":
     grp.add_edge("D", "E", 6)
     grp.add_edge("D", "F", 5)
     grp.add_edge("E", "F", 3)
+
+
+
+
+    for x in grp.list:
+        print(x, grp.list.get(x))
 
     print(bfs(grp))
     print(dfs(grp))

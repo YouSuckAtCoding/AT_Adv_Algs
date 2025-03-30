@@ -15,6 +15,10 @@ if __name__ == "__main__":
     grp.add_edge(3, 5, 6,True)
     grp.add_edge(4, 5, 5,True)
 
-    print(grp.floyd())
+    for row in grp.matrix:
+        print(row)
+
+    for row in grp.floyd():
+        print(row)
 
     print(grp.matrix[0][5])
